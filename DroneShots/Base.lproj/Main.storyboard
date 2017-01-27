@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vwR-G9-fXp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="DroneShots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,124 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="js7-AH-cza">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="H0L-zi-WJT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableView>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="js7-AH-cza" secondAttribute="trailing" id="Dtq-va-4GR"/>
+                            <constraint firstItem="js7-AH-cza" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KvO-D2-hXe"/>
+                            <constraint firstItem="js7-AH-cza" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iAL-OD-6fB"/>
+                            <constraint firstItem="js7-AH-cza" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jA2-e8-EBz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="js7-AH-cza" secondAttribute="bottom" id="xRw-2u-X5A"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sty-Nv-ejn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PAX-kg-809">
+                            <connections>
+                                <segue destination="kXQ-td-fcd" kind="show" id="YIQ-RX-GDZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="droneTableView" destination="js7-AH-cza" id="y19-vI-33v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="860" y="138.98050974512745"/>
+        </scene>
+        <!--Drone View Controller-->
+        <scene sceneID="6Wr-O8-xog">
+            <objects>
+                <viewController id="kXQ-td-fcd" customClass="DroneViewController" customModule="DroneShots" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fKJ-1Y-k1c"/>
+                        <viewControllerLayoutGuide type="bottom" id="T6k-En-hCh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FeV-u0-GYB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drone1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qvn-de-fak">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="A6O-Q6-6Ng"/>
+                                    <constraint firstAttribute="width" constant="280" id="TDX-sX-8lO"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IiK-pd-yZ9">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OF-Fi-yuG">
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="kXQ-td-fcd" eventType="touchUpInside" id="Ts8-eU-ebE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5OF-Fi-yuG" firstAttribute="centerX" secondItem="FeV-u0-GYB" secondAttribute="centerX" id="6fg-2i-b8v"/>
+                            <constraint firstItem="5OF-Fi-yuG" firstAttribute="top" secondItem="IiK-pd-yZ9" secondAttribute="bottom" constant="20" id="Xfu-mr-nh3"/>
+                            <constraint firstItem="IiK-pd-yZ9" firstAttribute="centerX" secondItem="FeV-u0-GYB" secondAttribute="centerX" id="cDL-Fw-PKg"/>
+                            <constraint firstItem="IiK-pd-yZ9" firstAttribute="top" secondItem="qvn-de-fak" secondAttribute="bottom" constant="40" id="ft6-LQ-YUO"/>
+                            <constraint firstItem="qvn-de-fak" firstAttribute="top" secondItem="fKJ-1Y-k1c" secondAttribute="bottom" constant="40" id="pZA-LZ-fVv"/>
+                            <constraint firstItem="IiK-pd-yZ9" firstAttribute="width" secondItem="qvn-de-fak" secondAttribute="width" id="qCg-yC-GJX"/>
+                            <constraint firstItem="qvn-de-fak" firstAttribute="centerX" secondItem="FeV-u0-GYB" secondAttribute="centerX" id="r97-SN-Gvg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4gA-vn-kmz">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="EIL-Dy-IxT">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="kXQ-td-fcd" id="yzs-oi-5M8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="53p-Td-J74">
+                                <connections>
+                                    <action selector="photosTapped:" destination="kXQ-td-fcd" id="zMe-94-d5P"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="qvn-de-fak" id="dXc-1E-514"/>
+                        <outlet property="titleTextField" destination="IiK-pd-yZ9" id="c36-jM-LYc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQu-kY-MCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sas-5u-7XF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwR-G9-fXp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="08F-rs-wIp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5kc-hn-Q1h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pDW-wd-Nwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="drone1.jpg" width="2986" height="1520"/>
+    </resources>
 </document>

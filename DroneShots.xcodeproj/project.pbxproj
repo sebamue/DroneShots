@@ -13,6 +13,8 @@
 		9E01D44E1E3AC92800C4290F /* DroneShots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D44C1E3AC92800C4290F /* DroneShots.xcdatamodeld */; };
 		9E01D4501E3AC92800C4290F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E01D44F1E3AC92800C4290F /* Assets.xcassets */; };
 		9E01D4531E3AC92800C4290F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E01D4511E3AC92800C4290F /* LaunchScreen.storyboard */; };
+		9E01D45B1E3ACDD300C4290F /* drone1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E01D45A1E3ACDD300C4290F /* drone1.jpg */; };
+		9E01D45F1E3AF21200C4290F /* DroneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E01D45E1E3AF21200C4290F /* DroneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		9E01D44F1E3AC92800C4290F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E01D4521E3AC92800C4290F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E01D4541E3AC92800C4290F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E01D45A1E3ACDD300C4290F /* drone1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drone1.jpg; sourceTree = "<group>"; };
+		9E01D45E1E3AF21200C4290F /* DroneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroneViewController.swift; path = ../DroneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				9E01D4451E3AC92800C4290F /* AppDelegate.swift */,
 				9E01D4471E3AC92800C4290F /* ViewController.swift */,
+				9E01D45E1E3AF21200C4290F /* DroneViewController.swift */,
 				9E01D4491E3AC92800C4290F /* Main.storyboard */,
+				9E01D45A1E3ACDD300C4290F /* drone1.jpg */,
 				9E01D44F1E3AC92800C4290F /* Assets.xcassets */,
 				9E01D4511E3AC92800C4290F /* LaunchScreen.storyboard */,
 				9E01D4541E3AC92800C4290F /* Info.plist */,
@@ -127,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E01D4531E3AC92800C4290F /* LaunchScreen.storyboard in Resources */,
+				9E01D45B1E3ACDD300C4290F /* drone1.jpg in Resources */,
 				9E01D4501E3AC92800C4290F /* Assets.xcassets in Resources */,
 				9E01D44B1E3AC92800C4290F /* Main.storyboard in Resources */,
 			);
@@ -142,6 +149,7 @@
 				9E01D4481E3AC92800C4290F /* ViewController.swift in Sources */,
 				9E01D4461E3AC92800C4290F /* AppDelegate.swift in Sources */,
 				9E01D44E1E3AC92800C4290F /* DroneShots.xcdatamodeld in Sources */,
+				9E01D45F1E3AF21200C4290F /* DroneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
