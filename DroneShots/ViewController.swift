@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         // Do any additional setup after loading the view, typically from a nib.
         droneTableView.dataSource = self
         droneTableView.delegate = self
@@ -43,12 +44,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        
         let drone = drones[indexPath.row]
         cell.textLabel?.text = drone.title
         cell.imageView?.image = UIImage(data: drone.image as! Data)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedCell = drones[indexPath.row] 
+        performSegue(withIdentifier: "droneSegue", sender: selectedCell)
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! DroneViewController
+        nextVC.drone = sender as? Drone
+    }
+    
     
     
 }

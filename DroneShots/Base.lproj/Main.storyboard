@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vwR-G9-fXp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vwR-G9-fXp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="js7-AH-cza">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="H0L-zi-WJT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -40,7 +44,7 @@
                     <navigationItem key="navigationItem" id="sty-Nv-ejn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PAX-kg-809">
                             <connections>
-                                <segue destination="kXQ-td-fcd" kind="show" id="YIQ-RX-GDZ"/>
+                                <segue destination="kXQ-td-fcd" kind="show" identifier="droneSegue" id="YIQ-RX-GDZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,28 +69,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drone1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qvn-de-fak">
+                                <rect key="frame" x="47.5" y="104" width="280" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="A6O-Q6-6Ng"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="Dvi-bm-bHK"/>
                                     <constraint firstAttribute="width" constant="280" id="TDX-sX-8lO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="aPY-n7-3pf"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IiK-pd-yZ9">
+                                <rect key="frame" x="47.5" y="294" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OF-Fi-yuG">
+                                <rect key="frame" x="172.5" y="344" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addTapped:" destination="kXQ-td-fcd" eventType="touchUpInside" id="Ts8-eU-ebE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCl-cn-95J">
+                                <rect key="frame" x="165" y="384" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteTapped:" destination="kXQ-td-fcd" eventType="touchUpInside" id="aZS-hP-AIb"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5OF-Fi-yuG" firstAttribute="centerX" secondItem="FeV-u0-GYB" secondAttribute="centerX" id="6fg-2i-b8v"/>
+                            <constraint firstItem="UCl-cn-95J" firstAttribute="top" secondItem="5OF-Fi-yuG" secondAttribute="bottom" constant="10" id="QY3-k9-OGh"/>
                             <constraint firstItem="5OF-Fi-yuG" firstAttribute="top" secondItem="IiK-pd-yZ9" secondAttribute="bottom" constant="20" id="Xfu-mr-nh3"/>
                             <constraint firstItem="IiK-pd-yZ9" firstAttribute="centerX" secondItem="FeV-u0-GYB" secondAttribute="centerX" id="cDL-Fw-PKg"/>
+                            <constraint firstItem="UCl-cn-95J" firstAttribute="centerX" secondItem="FeV-u0-GYB" secondAttribute="centerX" id="cRN-zl-3kW"/>
                             <constraint firstItem="IiK-pd-yZ9" firstAttribute="top" secondItem="qvn-de-fak" secondAttribute="bottom" constant="40" id="ft6-LQ-YUO"/>
                             <constraint firstItem="qvn-de-fak" firstAttribute="top" secondItem="fKJ-1Y-k1c" secondAttribute="bottom" constant="40" id="pZA-LZ-fVv"/>
                             <constraint firstItem="IiK-pd-yZ9" firstAttribute="width" secondItem="qvn-de-fak" secondAttribute="width" id="qCg-yC-GJX"/>
@@ -108,6 +126,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="5OF-Fi-yuG" id="XOg-lM-ClS"/>
+                        <outlet property="deleteButton" destination="UCl-cn-95J" id="jMe-Zz-DzE"/>
                         <outlet property="imageView" destination="qvn-de-fak" id="dXc-1E-514"/>
                         <outlet property="titleTextField" destination="IiK-pd-yZ9" id="c36-jM-LYc"/>
                     </connections>
